@@ -1,0 +1,29 @@
+inherit kf5
+
+NAME="kf5-kemoticons"
+VERSION=5.9.0
+RELEASE=1
+CATEGORY="Libs"
+SUMMARY="KDE 5 emoticon conversion library"
+DESCRIPTION="KEmoticons converts emoticons from text to a graphical
+representation with images in HTML. It supports setting different themes for
+emoticons coming from different providers."
+
+PKG_NAMES="libKF5Emoticons5 libKF5Emoticons-devel"
+libKF5Emoticons5_CONTENTS="
+	usr/bin/cygKF5Emoticons-5.dll
+	${QT5_PLUGINSDIR#/}/kf5/emoticonsthemes/
+	${QT5_PLUGINSDIR#/}/kf5/KEmoticonsIntegrationPlugin.dll
+	usr/share/doc/
+	usr/share/emoticons/
+	usr/share/kservices5/
+	usr/share/kservicetypes5/
+"
+libKF5Emoticons_devel_REQUIRES="libKF5Archive-devel libKF5Service-devel libQt5Core-devel libQt5Gui-devel"
+libKF5Emoticons_devel_CONTENTS="
+	usr/include/KF5/KEmoticons/
+	usr/include/KF5/kemoticons_version.h
+	usr/lib/cmake/KF5Emoticons/
+	${QT5_MKSPECSDIR#/}/modules/qt_KEmoticons.pri
+	usr/lib/libKF5Emoticons.dll.a
+"
